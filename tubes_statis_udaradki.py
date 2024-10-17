@@ -792,12 +792,6 @@ plt.ylabel('Korelasi dengan Tingkat Stres')
 plt.title('Korelasi antara Polutan dan Tingkat Stres Penduduk di DKI Jakarta (2023)')
 plt.show()
 
-correlations = {}
-for col in ['pm_sepuluh', 'pm_duakomalima', 'sulfur_dioksida', 'karbon_monoksida', 'ozon', 'nitrogen_dioksida']:
-    correlation, p_value = stats.pearsonr(merged_data[col], merged_data['tingkat_stres'])
-    correlations[col] = correlation
-    print(f'Korelasi antara {col} dan tingkat stres: {correlation:.2f}, P-value: {p_value:.2f}')
-
 # Visualisasi korelasi
 labels = ['PM10', 'PM2.5', 'SO2', 'CO', 'O3', 'NO2']
 correlation_values = [correlations['pm_sepuluh'], correlations['pm_duakomalima'], correlations['sulfur_dioksida'], correlations['karbon_monoksida'], correlations['ozon'], correlations['nitrogen_dioksida']]
@@ -807,3 +801,4 @@ plt.bar(labels, correlation_values, color='b')
 plt.xlabel('Polutan')
 plt.ylabel('Korelasi dengan Tingkat Stres')
 plt.title('Korelasi antara Polutan dan Tingkat Stres Penduduk di DKI Jakarta (2023)')
+plt.show()
