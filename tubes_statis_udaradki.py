@@ -804,3 +804,12 @@ plt.title('Korelasi antara Polutan dan Tingkat Stres Penduduk di DKI Jakarta (20
 plt.show()
 
 # Ubah salah satu file di project dengan menambahkan baris komentar
+labels = ['PM10', 'PM2.5', 'SO2', 'CO', 'O3', 'NO2']
+correlation_values = [correlations['pm_sepuluh'], correlations['pm_duakomalima'], correlations['sulfur_dioksida'], correlations['karbon_monoksida'], correlations['ozon'], correlations['nitrogen_dioksida']]
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, correlation_values, color='b')
+plt.xlabel('Polutan')
+plt.ylabel('Korelasi dengan Tingkat Stres')
+plt.title('Korelasi antara Polutan dan Tingkat Stres Penduduk di DKI Jakarta (2023)')
+plt.show()
